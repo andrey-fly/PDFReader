@@ -12,23 +12,22 @@ struct BooksListView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.books) { book in
-                NavigationLink(isActive: $viewModel.isReady, destination: {
+            List(viewModel.books, id: \.id) { book in
+                NavigationLink(tag: book.name, selection: $viewModel.selectedBookName) {
                     PDFReader(url: viewModel.pdfUrl)
-                }, label: {
-                    Text(book.title)
+                        .navigationBarTitle(Text(book.title), displayMode: .inline)
+                } label: {
+                    let bookVM = BookRowViewModel(book: book)
+                    BookRowView(viewModel: bookVM)
                         .onTapGesture {
-                            viewModel.downloadPDF(name: book.name)
+                            bookVM.state = .loading
+                            viewModel.downloadPDF(name: book.name) {
+                                bookVM.state = .idle
+                            }
                         }
-                })
+                }
             }
-            .navigationTitle(Text("Books"))
+            .navigationBarTitle(Text("Books"))
         }
-    }
-}
-
-struct BooksListView_Previews: PreviewProvider {
-    static var previews: some View {
-        BooksListView()
     }
 }

@@ -11,7 +11,7 @@ class BooksListViewModel: ObservableObject {
     let service: BooksService
     let pdfService: PDFService
     @Published var books: [Book]
-    @Published var isReady: Bool = false
+    @Published var selectedBookName: String?
     var pdfUrl: URL?
     
     init(service: BooksService) {
@@ -34,13 +34,14 @@ class BooksListViewModel: ObservableObject {
         }
     }
     
-    func downloadPDF(name: String) {
+    func downloadPDF(name: String, completion: (() -> ())?) {
         pdfService.downloadPDF(name: name) { [weak self] res in
             switch res {
             case .success(let url):
                 DispatchQueue.main.async {
                     self?.pdfUrl = url
-                    self?.isReady = true
+                    self?.selectedBookName = name
+                    completion?()
                 }
             case .failure(let error):
                 print(error)

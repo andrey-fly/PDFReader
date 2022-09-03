@@ -20,6 +20,8 @@
 		6DA84C5E28B512EE00F94487 /* BooksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA84C5D28B512EE00F94487 /* BooksList.swift */; };
 		6DA84C6028B519B900F94487 /* RestPDFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA84C5F28B519B900F94487 /* RestPDFService.swift */; };
 		6DA84C6528B520D800F94487 /* PDFReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA84C6428B520D800F94487 /* PDFReader.swift */; };
+		6DA84C6728BF77D500F94487 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA84C6628BF77D500F94487 /* BookRowView.swift */; };
+		6DA84C6928BF7AF000F94487 /* BookRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA84C6828BF7AF000F94487 /* BookRowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		6DA84C5D28B512EE00F94487 /* BooksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksList.swift; sourceTree = "<group>"; };
 		6DA84C5F28B519B900F94487 /* RestPDFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPDFService.swift; sourceTree = "<group>"; };
 		6DA84C6428B520D800F94487 /* PDFReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReader.swift; sourceTree = "<group>"; };
+		6DA84C6628BF77D500F94487 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
+		6DA84C6828BF7AF000F94487 /* BookRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				6D94364E28B0E7E900AC7095 /* BooksListView.swift */,
+				6DA84C6628BF77D500F94487 /* BookRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				6DA84C5B28B50E0200F94487 /* BooksListViewModel.swift */,
+				6DA84C6828BF7AF000F94487 /* BookRowViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -237,7 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DA84C6928BF7AF000F94487 /* BookRowViewModel.swift in Sources */,
 				6DA84C5C28B50E0200F94487 /* BooksListViewModel.swift in Sources */,
+				6DA84C6728BF77D500F94487 /* BookRowView.swift in Sources */,
 				6D94364F28B0E7E900AC7095 /* BooksListView.swift in Sources */,
 				6DA84C4A28B4F65900F94487 /* BooksService.swift in Sources */,
 				6DA84C5728B502AD00F94487 /* PDFService.swift in Sources */,
