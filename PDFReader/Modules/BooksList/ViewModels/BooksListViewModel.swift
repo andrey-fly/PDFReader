@@ -10,9 +10,10 @@ import Foundation
 class BooksListViewModel: ObservableObject {
     let service: BooksService
     let pdfService: PDFService
+    var pdfUrl: URL?
+    
     @Published var books: [Book]
     @Published var selectedBookName: String?
-    var pdfUrl: URL?
     
     init(service: BooksService) {
         self.service = service
@@ -40,8 +41,8 @@ class BooksListViewModel: ObservableObject {
             case .success(let url):
                 DispatchQueue.main.async {
                     self?.pdfUrl = url
-                    self?.selectedBookName = name
                     completion?()
+                    self?.selectedBookName = name
                 }
             case .failure(let error):
                 print(error)

@@ -9,7 +9,7 @@ import Foundation
 
 class BookRowViewModel: ObservableObject {
     let book: Book
-    @Published var state: State = .idle
+    @Published private(set) var state: State = .idle
     
     enum State {
         case idle
@@ -23,19 +23,4 @@ class BookRowViewModel: ObservableObject {
     func changeState(state: State) {
         self.state = state
     }
-    
-//    func downloadPDF() {
-//        pdfService.downloadPDF(name: book.name) { [weak self] res in
-//            switch res {
-//            case .success(let url):
-//                DispatchQueue.main.async {
-//                    self?.pdfURL = url
-//                    self?.readyToPush = true
-//                    self?.state = .idle
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
 }

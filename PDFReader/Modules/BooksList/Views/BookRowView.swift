@@ -12,14 +12,15 @@ struct BookRowView: View {
 
     var body: some View {
         HStack {
+            Text(viewModel.book.title)
+            Spacer()
             switch viewModel.state {
             case .idle:
-                Text(viewModel.book.title)
+                EmptyView()
             case .loading:
-                Text(viewModel.book.title)
-                Spacer()
                 ProgressView()
             }
         }
+        .contentShape(Rectangle())
     }
 }
